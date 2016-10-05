@@ -1,5 +1,5 @@
-function ret = grafico(f,l,r,d)
-#grafico(f,l,r,d)
+function ret = grafico(f,l,r,d=1e-2)
+#grafico(f,l,r,d=1e-3)
 #f: function handle
 #l: interval left
 #r: interval right
