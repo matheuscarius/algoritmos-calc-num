@@ -1,5 +1,5 @@
-function ret = grafico_n(f,l,r,n)
-#graf(f,l,r,n)
+function ret = grafico_n(f,l,r,n=1e3)
+#graf(f,l,r,n=1e3)
 #f: function handle
 #l: esquerda
 #r: direita
