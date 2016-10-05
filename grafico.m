@@ -1,18 +1,23 @@
-function ret = grafico(f,l,r,n)
-#graf(f,l,r,n)
+function ret = grafico(f,l,r,d)
+#grafico(f,l,r,d)
 #f: function handle
-#l: esquerda
-#r: direita
-#n: quantidade de pontos
-  x = linspace(l,r,n);
+#l: interval left
+#r: interval right
+#d: resolution
   ret = [];
-  for y=1:n-1
-    if(f(x(y))*f(x(y+1))<0)
-      ret = [ret (x(y)+x(y+1))/2];
-      return;
-    end
-  end
+  int = l:d:r;
+  n = length(int);
+  for i=1:n-1
+    if (f(int(i)) == 0)
+      ret = [ret int(i)];
+    elseif(f(int(i))*f(int(i+1)) < 0 )
+      ret = [ret (int(i)+int(i+1))/2];
+    endif
+  endfor
+  if(f(int(n))==0)
+    ret = [ret int(n)];
+  endif
   if(!length(ret))
     fprintf(stderr,"grafico: Não foi possível achar raiz\n");
   endif
-end
+endfunction
