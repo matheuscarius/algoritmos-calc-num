@@ -10,4 +10,5 @@ function x = utsolve(u,b)
     endfor
     x(i)=(b(i)-soma)/u(i,i);
   endfor
+  x=x';
 endfunction

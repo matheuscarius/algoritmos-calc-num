@@ -10,4 +10,5 @@ function x = ltsolve(l,b)
     endfor
     x(i)=(b(i)-soma)/l(i,i);
   endfor
+  x=x';
 endfunction
