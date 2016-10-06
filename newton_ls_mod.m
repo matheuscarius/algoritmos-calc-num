@@ -19,9 +19,14 @@ function ret = newton_ls_mod(f,x=0,err=1e-6,n=1e1)
     y = ltsolve(L,B); #Resolver Ly=B
     w = utsolve(U,y); #Resolver Ux=y
     x += w';
-    if(norm(w)<err)
+    len = length(w);
+    maior = 0;
+    for(j=1:len)
+      maior = max(maior,abs(w(j)));
+    endfor
+    if(maior<err)
       ret = x;
-      return
+      return;
     endif
   endfor
   ret = x;

@@ -17,9 +17,14 @@ function ret = newton_ls(f,x=0,err=1e-6,n=1e1)
     [a,b] = gauss(A,B); #Resolve J*(x_(k+1)-x_k)=F
     y = utsolve(a,b)'; #Idem
     x += y;
-    if(norm(y)<err)
+    len = length(y);
+    maior = 0;
+    for(j=1:len)
+      maior = max(maior,abs(y(j)));
+    endfor
+    if(maior<err)
       ret = x;
-      return
+      return;
     endif
   endfor
   ret = x;
