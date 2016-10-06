@@ -1,4 +1,4 @@
-function x = gauss_jacobi(a,b,x=0,err=1e-6,it=1e3)
+function x = gauss_seidel(a,b,x=0,err=1e-6,it=1e3)
 #gauss_jacobi(a,b,x=0,err=1e-6,n=1e3)
 #a: matriz do sistema
 #b: vetor das constantes
@@ -18,7 +18,7 @@ function x = gauss_jacobi(a,b,x=0,err=1e-6,it=1e3)
         if(k==j)
           continue; #não se contribui
         endif
-        x(j)-=a(j,k)*ox(k);
+        x(j)-=a(j,k)*x(k);
       endfor
       x(j)/=a(j,j);
     endfor
