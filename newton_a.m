@@ -9,7 +9,9 @@ function ret = newton(f,x,err=1e-6,n=1e3,h=1e-6)
     df = der(f,x,h);
     last = x;
     x=x-f(x)./df;
-    if(abs(x-last)<err)
+    last -= x;
+    last = last*last';
+    if(sqrt(last)<err)
       break;
     endif
   endfor
