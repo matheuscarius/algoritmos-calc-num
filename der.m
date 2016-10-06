@@ -1,5 +1,5 @@
-function ret = der(f,x,h)
-#ret(f,x,h)
+function ret = der(f,x,h=1e-6)
+#ret(f,x,h=1e-6)
 #f: function handle
 #x: ponto
 #h: delta
