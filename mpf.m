@@ -1,5 +1,5 @@
-function ret = mpf(phi,x,n)
-#mpf(phi,x,n)
+function ret = mpf(phi,x,n=1e3)
+#mpf(phi,x,n=1e3)
 #phi: function handle
 #x: valor inicial
 #n: número de iterações
