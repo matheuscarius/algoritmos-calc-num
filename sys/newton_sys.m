@@ -1,5 +1,5 @@
-function ret = newton_ls_mod(f,x=0,err=1e-6,n=1e1)
-#newton_ls_mod(f,x=0,err=1e-6,n=1e1)
+function ret = newton_sys(f,x=0,err=1e-6,n=1e1)
+#newton_sys(f,x=0,err=1e-6,n=1e1)
 #f: symbolic function
 #x: vetor inicial
 #err: erro
@@ -10,19 +10,17 @@ function ret = newton_ls_mod(f,x=0,err=1e-6,n=1e1)
   endif
   jb = matlabFunction(jb); #Jacobiana convertida
   f = matlabFunction(f); #Função convertida
-  z=num2cell(x); #Converte array pra cell
-  A = jb(z{:}); #Jacobiana Inicial
-  [L,U] = lu(A);#Decomposicao LU
   for i=1:n
-    z=num2cell(x);
-    B = -f(z{:});
-    y = ltsolve(L,B); #Resolver Ly=B
-    w = utsolve(U,y); #Resolver Ux=y
-    x += w';
-    len = length(w);
+    z=num2cell(x); #Array to cell
+    A = jb(z{:}); #Jacobiana no ponto
+    B = -f(z{:}); #Funçao no ponto
+    [a,b] = gauss(A,B); #Resolve J*(x_(k+1)-x_k)=F
+    y = utsolve(a,b)'; #Idem
+    x += y;
+    len = length(y);
     maior = 0;
     for(j=1:len)
-      maior = max(maior,abs(w(j)));
+      maior = max(maior,abs(y(j)));
     endfor
     if(maior<err)
       ret = x;

@@ -1,5 +1,5 @@
 function ret = newtone(f,x,err,h)
-#newton(f,x,n)
+#newtone(f,x,err,h)
 #f: function handle
 #x: chute inicial
 #err: erro

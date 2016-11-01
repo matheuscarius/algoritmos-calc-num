@@ -1,5 +1,5 @@
-function ret = mpf_ls(phi,x=0,err=1e-6,n=1e3)
-#mpf(phi,x,err=1e-6,n=1e3)
+function ret = mpf_sys(phi,x=0,err=1e-6,n=1e3)
+#mpf_sys(phi,x,err=1e-6,n=1e3)
 #phi: function handle
 #x: array inicial
 #err: erro
