@@ -1,5 +1,5 @@
-function [L,U] = lu(a)
-#[L,U] = lu(a)
+function [L,U] = lu_dec(a)
+#[L,U] = lu_dec(a)
 #a: matriz do sistema
 #L: matriz triangular inferior
 #U: matriz triangular superior
