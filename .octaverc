@@ -1,3 +1,3 @@
 ## Begin savepath auto-created section, do not edit
-  addpath ('./misc:./poly-int:./sys:./zero', '-begin');
+  addpath ('./integration:./miscellaneous:./polynomial-interpolation:./systems:./zero', '-begin');
 ## End savepath auto-created section
