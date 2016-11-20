@@ -17,5 +17,5 @@ for i=1:n
   endfor
   P += l*y(i);
 endfor
-
+P = expand(P);
 endfunction

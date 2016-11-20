@@ -1,0 +1,7 @@
+P1 = lagrange_interpolation([1,2,3],[1,4,9])
+P2 = lagrange_interpolation_sym([1,2,3],[1,4,9])
+f1 = poly2sym(P1)
+f2 = polyout(P1)
+f3 = inline(f2)
+g1 = matlabFunction(P2)
+g2 = function_handle(P2)
