@@ -1,2 +1,1 @@
-# algoritmos-calc-num
-Algoritmos de Cálculo Numérico
+# Algoritmos de Cálculo Numérico
