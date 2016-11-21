@@ -5,6 +5,12 @@ function I = simpson(f,a,b,n=2)
 #a: limite inferior
 #b: limite superior
 #n=1: número de divisões
+if(mod(n,2))
+  I = inf;
+  printf("Erro: n deve ser par\n");
+  return;
+endif
+
 h = (b-a)/n;
 I = 0;
 for i=0:2:n-2
